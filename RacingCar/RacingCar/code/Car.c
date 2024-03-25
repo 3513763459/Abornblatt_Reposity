@@ -1,7 +1,7 @@
 /*
  * Car.c
  *
- *  Created on: 2023Äê12ÔÂ9ÈÕ
+ *  Created on: 2023å¹´12æœˆ9æ—¥
  *      Author: LINEAR
  */
 #include "Car.h"
@@ -26,47 +26,47 @@ void Cpu1_Init(void)
 
 void Cpu0_Init(void)
 {
-//    //Êı¾İ³õÊ¼»¯
-    Data_Settings(); //ÇëÊ×ÏÈ³õÊ¼»¯¸÷Àà±äÁ¿,ÒòÎªÉãÏñÍ·Ó²¼şÆØ¹âĞèÒª
+//    //æ•°æ®åˆå§‹åŒ–
+    Data_Settings(); //è¯·é¦–å…ˆåˆå§‹åŒ–å„ç±»å˜é‡,å› ä¸ºæ‘„åƒå¤´ç¡¬ä»¶æ›å…‰éœ€è¦
 //    Flash_read();
 
-    //³õÊ¼»¯ÉãÏñÍ·
+    //åˆå§‹åŒ–æ‘„åƒå¤´
      mt9v03x_init();
    //  mt9v03x_set_exposure_time(Image_DataStruct.Camera_Exp);
-//     //¶æ»ú³õÊ¼»¯
+//     //èˆµæœºåˆå§‹åŒ–
 //     Steer_Init();
-//     //±àÂëÆ÷³õÊ¼»¯
+//     //ç¼–ç å™¨åˆå§‹åŒ–
 //     Encoder_Init();
-//     //µç»ú³õÊ¼»¯
-//     Motor_Init();//ÖĞ¶ÏÓÉcpu0´¥·¢·şÎñ,ËùÒÔº¯Êı´úÂëÒ²·ÅÔÚÁËcpu0
-//    //°´¼ü³õÊ¼»¯
+//     //ç”µæœºåˆå§‹åŒ–
+//     Motor_Init();//ä¸­æ–­ç”±cpu0è§¦å‘æœåŠ¡,æ‰€ä»¥å‡½æ•°ä»£ç ä¹Ÿæ”¾åœ¨äº†cpu0
+//    //æŒ‰é”®åˆå§‹åŒ–
 //    key_init(5);
 
-    //ÍÓÂİÒÇdmp³õÊ¼»¯
-   // mpu_dmp_init();//ÊÇÓĞ·µ»ØÖµµÄ,0´ú±í³É¹¦
-/**********************************************debug²ã****************************************************/
+    //é™€èºä»ªdmpåˆå§‹åŒ–
+   // mpu_dmp_init();//æ˜¯æœ‰è¿”å›å€¼çš„,0ä»£è¡¨æˆåŠŸ
+/**********************************************debugå±‚****************************************************/
 
-//     for (uint8_t i = 0; i < 120; ++i){x0_boundry[i] = &ipts0[i][0];}//ÓÉÓÚÎÒÃÇµÄx,y¶¼ÊÇÓÃipts[µãµÄ¸öÊı][0´ú±íx]  ipts[][1´ú±íy]
-//     for (uint8_t i = 0; i < 120; ++i){x1_boundry[i] = &ipts1[i][0];}//ĞèÒª×¨ÃÅ½øĞĞ°şÀë,ËùÒÔĞÂ½¨x_boundry[µãµÄ¸öÊı] Ö¸ÕëÊı×é
-//     for (uint8_t i = 0; i < 120; ++i){y0_boundry[i] = &ipts0[i][1];}//½«±ßÏßÊı×é ipts[0][0]~ipts[0][119]Ëù´ú±íµÄxµÄµØÖ·´«½øx_boundry[0]~x_boundry[119]
-//     for (uint8_t i = 0; i < 120; ++i){y1_boundry[i] = &ipts1[i][1];}//ÕâÑùµÄ»¯¾Í´ï³ÉÁËÓÀ¾ÃµÄÓ³Éä,½«x_boundry[0]Ëù´ú±íµÄÊ×ÔªËØµØÖ· ´«½øseekfree_assistant_camera_boundary_config
+//     for (uint8_t i = 0; i < 120; ++i){x0_boundry[i] = &ipts0[i][0];}//ç”±äºæˆ‘ä»¬çš„x,yéƒ½æ˜¯ç”¨ipts[ç‚¹çš„ä¸ªæ•°][0ä»£è¡¨x]  ipts[][1ä»£è¡¨y]
+//     for (uint8_t i = 0; i < 120; ++i){x1_boundry[i] = &ipts1[i][0];}//éœ€è¦ä¸“é—¨è¿›è¡Œå‰¥ç¦»,æ‰€ä»¥æ–°å»ºx_boundry[ç‚¹çš„ä¸ªæ•°] æŒ‡é’ˆæ•°ç»„
+//     for (uint8_t i = 0; i < 120; ++i){y0_boundry[i] = &ipts0[i][1];}//å°†è¾¹çº¿æ•°ç»„ ipts[0][0]~ipts[0][119]æ‰€ä»£è¡¨çš„xçš„åœ°å€ä¼ è¿›x_boundry[0]~x_boundry[119]
+//     for (uint8_t i = 0; i < 120; ++i){y1_boundry[i] = &ipts1[i][1];}//è¿™æ ·çš„åŒ–å°±è¾¾æˆäº†æ°¸ä¹…çš„æ˜ å°„,å°†x_boundry[0]æ‰€ä»£è¡¨çš„é¦–å…ƒç´ åœ°å€ ä¼ è¿›seekfree_assistant_camera_boundary_config
 
 #define WIFI_SSID_TEST          "chen_wifi"
-#define WIFI_PASSWORD_TEST      "12345678"  // Èç¹ûĞèÒªÁ¬½ÓµÄWIFI Ã»ÓĞÃÜÂëÔòĞèÒª½« ÕâÀï Ìæ»»Îª NULL
+#define WIFI_PASSWORD_TEST      "12345678"  // å¦‚æœéœ€è¦è¿æ¥çš„WIFI æ²¡æœ‰å¯†ç åˆ™éœ€è¦å°† è¿™é‡Œ æ›¿æ¢ä¸º NULL
 
 wifi_spi_init(WIFI_SSID_TEST, WIFI_PASSWORD_TEST);
-// Öğ·ÉÖúÊÖ³õÊ¼»¯ Êı¾İ´«ÊäÊ¹ÓÃ¸ßËÙWIFI SPI
+// é€é£åŠ©æ‰‹åˆå§‹åŒ– æ•°æ®ä¼ è¾“ä½¿ç”¨é«˜é€ŸWIFI SPI
 seekfree_assistant_interface_init(SEEKFREE_ASSISTANT_WIFI_SPI);
-// ·¢ËÍ×Ü×ê·çÍ¼ÏñĞÅÏ¢(½ö°üº¬Ô­Ê¼Í¼ÏñĞÅÏ¢)
+// å‘é€æ€»é’»é£å›¾åƒä¿¡æ¯(ä»…åŒ…å«åŸå§‹å›¾åƒä¿¡æ¯)
 seekfree_assistant_camera_information_config(SEEKFREE_ASSISTANT_MT9V03X, image_copy[0], MT9V03X_W, MT9V03X_H);
 //seekfree_assistant_camera_boundary_config(XY_BOUNDARY, 480, *x0_boundry, *x1_boundry, NULL, *y0_boundry, *y1_boundry, NULL);
-seekfree_assistant_camera_boundary_config(XY_BOUNDARY,120, x0_boundry,  x1_boundry, NULL,y0_boundry, y1_boundry,NULL);
+seekfree_assistant_camera_boundary_config(XY_BOUNDARY,240, x0_boundry,  x1_boundry, NULL,y0_boundry, y1_boundry,NULL);
 
-/**********************************************debug²ã****************************************************/
+/**********************************************debugå±‚****************************************************/
 
-    //ÖĞ¶Ï³õÊ¼»¯
-//    pit_ms_init(CCU60_CH0, STEER_PERIOD_MS);//¶æ»ú,±àÂëÆ÷ÖĞ¶Ï
-//    pit_ms_init(CCU60_CH1, SPEED_PERIOD_MS);//µç»úÖĞ¶Ï
-//    pit_ms_init(CCU61_CH0, GYRO_PERIOD_MS);//ÍÓÂİÒÇÖĞ¶Ï
+    //ä¸­æ–­åˆå§‹åŒ–
+//    pit_ms_init(CCU60_CH0, STEER_PERIOD_MS);//èˆµæœº,ç¼–ç å™¨ä¸­æ–­
+//    pit_ms_init(CCU60_CH1, SPEED_PERIOD_MS);//ç”µæœºä¸­æ–­
+//    pit_ms_init(CCU61_CH0, GYRO_PERIOD_MS);//é™€èºä»ªä¸­æ–­
 }
 
